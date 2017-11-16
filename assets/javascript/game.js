@@ -1,6 +1,6 @@
 
 
- 	function letterGen() {
+ function letterGen() {
  		var text = "";
  		var possible = "abcdefghijklmnopqrstuvwxyz";
  	
@@ -8,32 +8,50 @@
     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
   	return text;
-  // }
 
 }
 
-console.log(letterGen());
+
 
  var winCount = 0;
  var lossCount = 0;
  var secretLetter = letterGen();
- // var input = userInput;
+ var guessRemain = 9;
+ // var input = userInput;+);
+console.log(secretLetter);
 
 // document.getElementById("demo").onkeypress = function() {myFunction()};
 document.getElementById("userKey").onkeyup = function (x) {
 
-alert(x.keyCode+' '+x.charCode);
 
-x.value = x.charCode.toLowerCase();
-//testInput(x.value);
+var letter = String.fromCharCode(x.keyCode).toLowerCase();
+alert('You chose ' + letter);
+
+testInput(letter);
+
 };
 function testInput(str) {
-	document.getElementById("winNumber").innerHTML = winCount;
-	if (secretLetter === str) {
+	alert('The computer chose ' + secretLetter);
 	
-	winCount++;}
-// };
+	if (secretLetter === str) {
+		// win();
+  // } else {
+  // 	lose()
+   // }
+	alert("You win!");
+	winCount++;
+	console.log(winCount);
+	document.getElementById("winNumber").innerHTML = winCount;}
 
+	else {
+		guessRemain--;
+		alert(guessRemain + ' guesses Remain');
+		// document.getElementById("winNumber").innerHTML = winCount;
+		if (guessRemain <= 0) {
+			alert ('You lose!');
+		};
+  };
+};
 
 // document.getElementById("demo").onkeypress = function() {myFunction()};
 
@@ -47,8 +65,8 @@ function testInput(str) {
     // document.getElementById("userKey").onkeyup;
     // return input;
 
-// };
+
 
 //     document.getElementById("demo").style.backgroundColor = "red";
-};
-console.log(winCount);
+
+
