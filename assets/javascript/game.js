@@ -4,11 +4,11 @@
  		var text = "";
  		var possible = "abcdefghijklmnopqrstuvwxyz";
  	
- 	for (var i = 0; i < 1; i++) {
+ 	// for (var i = 0; i < 1; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
   	return text;
-  }
+  // }
 
 }
 
@@ -16,17 +16,22 @@ console.log(letterGen());
 
  var winCount = 0;
  var lossCount = 0;
-
+ var secretLetter = letterGen();
  // var input = userInput;
 
-// document.getElementById("userKey").onkeypress function (userInput) {
+// document.getElementById("demo").onkeypress = function() {myFunction()};
+document.getElementById("userKey").onkeyup = function (x) {
 
+alert(x.keyCode+' '+x.charCode);
 
-
-
-	// return winCount;
-
-
+x.value = x.charCode.toLowerCase();
+//testInput(x.value);
+};
+function testInput(str) {
+	document.getElementById("winNumber").innerHTML = winCount;
+	if (secretLetter === str) {
+	
+	winCount++;}
 // };
 
 
@@ -43,11 +48,6 @@ console.log(letterGen());
     // return input;
 
 // };
-function userInput() {
-	document.getElementById("winNumber").innerHTML = winCount;
-	if (letterGen() == userInput()) {
-	
-	winCount++;}
 
 //     document.getElementById("demo").style.backgroundColor = "red";
 };
