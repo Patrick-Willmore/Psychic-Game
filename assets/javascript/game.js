@@ -25,7 +25,7 @@ document.onkeyup = function (x) {
 
 
 	letter = String.fromCharCode(x.keyCode).toLowerCase();
-	alert('You chose ' + letter);
+	// alert('You chose ' + letter);
 
 	testInput(letter);
 
@@ -46,8 +46,9 @@ function testInput(str) {
 
 	else {
 		guessRemain--;
-		alert(guessRemain + ' guesses Remain');
+		// alert(guessRemain + ' guesses Remain');
 		document.getElementById("wrongGuess").innerHTML += letter;
+		document.getElementById("guessesRemain").innerHTML = guessRemain;
 
 
 		// document.getElementById("winNumber").innerHTML = winCount;
