@@ -10,7 +10,9 @@
 
 }
 
-
+//if either win or lose, reset incorrect guess html, 
+//reset secret letter, 
+//guesses remain back to 9
 
  var winCount = 0;
  var lossCount = 0;
@@ -32,18 +34,16 @@ document.onkeyup = function (x) {
 };
 function testInput(str) {
 	
-	
-	if (secretLetter === str) {
-		// win();
-  // } else {
-  // 	lose()
-    alert('The computer chose ' + secretLetter);
-	alert("You win!");
-	winCount++;
-	console.log(winCount);
-	document.getElementById("winNumber").innerHTML = winCount;
-	}
-
+			
+	// function win() {
+		if (secretLetter === str) {
+	    alert('The computer chose ' + secretLetter);
+		alert("You win!");
+		winCount++;
+		console.log(winCount);
+		document.getElementById("winNumber").innerHTML = winCount;
+		}
+	// }
 	else {
 		guessRemain--;
 		// alert(guessRemain + ' guesses Remain');
